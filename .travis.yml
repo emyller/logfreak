@@ -1,8 +1,6 @@
 language: python
 python:
   - "3.5"
-install:
-  - make setup
-  - bower install
 script:
+  - make setup
   - py.test -vs
