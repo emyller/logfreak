@@ -15,12 +15,20 @@ html
 	body
 	- block whole_body
 
+		header
+			- block header
+				section.auth-menu
+					- include '_widgets/auth-menu.jade'
+
 		//- User messages
 		- block messages
 			- if messages
 				ul.messages
 					- for message in messages
 						li(class='{{ message.tags }}')= message
+
+		- block page_title
+			h1.page-title= view.page_title
 
 		//- Page content
 		- block content
